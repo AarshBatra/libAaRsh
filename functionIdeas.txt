@@ -1,0 +1,3 @@
+## Function Ideas
+
+# A function that counts the number of characters in a commented line and then subtracts it from 80, to fill the rest of the line with -'s.

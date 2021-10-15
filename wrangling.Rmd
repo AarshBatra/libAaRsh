@@ -1,0 +1,44 @@
+---
+title: "wrangling"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(devtools)
+library(roxygen2)
+library(skimr)
+```
+
+```{r load-doc-libAaRsh}
+devtools::load_all()
+devtools::document()
+```
+
+
+```{r get-data}
+deforestation_data <- readr::read_csv(abs_path("data-raw/annual-deforestation.csv"))
+
+```
+
+
+```{r eda}
+spec(deforestation_data)
+skim(deforestation_data)
+View(deforestation_data)
+
+# convert character columns to factor
+deforestation_data <- deforestation_data %>%
+  mutate_if(is.character, factor)
+
+foo <- deforestation_data %>% 
+  count(Entity) 
+
+```
+
+
+
