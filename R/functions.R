@@ -27,7 +27,7 @@ rectify_path <- function(backward_slash_path){
 
 # end of function
 
-#========================#
+#=========================#
 
 # creating a absolute file path for reading in files
 
@@ -53,4 +53,4 @@ abs_path <- function(relPathToDataFile){
 # end of function
 
 
-#=========================#
+#==========================#
